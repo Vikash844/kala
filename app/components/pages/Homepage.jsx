@@ -64,7 +64,7 @@ const Homepage = () => {
 
     return (
         <>
-            <div className="relative w-[95%] mx-auto mt-6">
+            <div className="relative w-full max-w-7xl mx-auto mt-4 sm:mt-6 px-2 sm:px-4">
                 <Slider {...mainSlider}>
                     {events.map((event, idx) => (
                         <div key={idx} className="relative group">
@@ -99,7 +99,7 @@ const Homepage = () => {
             </div>
 
 
-            <div className="max-w-7xl mx-auto px-4 py-10">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8 sm:py-10">
                 <div className="flex items-end justify-between mb-4">
                     <div>
                         <h3 className="text-2xl font-bold tracking-tight">Happening near you</h3>
@@ -109,18 +109,18 @@ const Homepage = () => {
                         explore all <FaArrowRight className="text-xs" />
                     </Link>
                 </div>
-                <div className="flex gap-4 scrollbar-hide pb-2">
+                <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 snap-x snap-mandatory">
                     {events.map((event, idx) => (
                         <div
                             key={idx}
-                            className="min-w-[260px] flex-shrink-0 bg-white rounded-xl shadow-sm border border-gray-100 p-3 flex items-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition"
+                            className="min-w-[220px] sm:min-w-[260px] md:min-w-[300px] flex-shrink-0 bg-white rounded-xl shadow-sm border border-gray-100 p-3 flex items-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition snap-start"
                         >
                             <Image
                                 src={event.image}
                                 alt={event.title}
                                 width={150}
                                 height={150}
-                                className="rounded-lg object-cover ring-1 ring-gray-100"
+                                className="rounded-lg object-cover ring-1 ring-gray-100 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
                             />
                             <div className="flex-1">
                                 <h3 className="font-semibold text-base text-gray-900 line-clamp-1">{event.title}</h3>
